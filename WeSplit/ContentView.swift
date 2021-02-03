@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var checkAmount = ""
     @State private var numberOfPeople = 2
-    @State private var tipPercentage  =  2
+    @State private var tipPercentage  =  0
     
     let tipPercentages = [10,15,20,25,0]
     
@@ -65,6 +65,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Total Check Amount")) {
                     Text("\(totalCheckAmount, specifier: "%.2f")")
+                        .foregroundColor((tipPercentage != 4) ? .black : .red)
                 }
             }
             .navigationBarTitle("We Split")
